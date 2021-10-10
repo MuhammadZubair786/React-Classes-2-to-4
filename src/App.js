@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
 function App() {
+  let [user, set2] = useState('zubair')
+  let [count, setcount] = useState(0)
+
+  var setdata = () => {
+    setcount(++count)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    <>
+      {user}
+      <h1>Hello</h1>
+      {count}
+      <button onClick={() => { set2('bilal') }}>Click me</button>
+      <button onClick={() => setdata()}>Click me</button>
+    </>
+  )
 }
 
 export default App;
